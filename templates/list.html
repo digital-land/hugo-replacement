@@ -1,0 +1,42 @@
+{% extends "digital-land-frontend/dlf-base.html" %}
+
+{% block beforeContent %}
+  {% include 'digital-land-frontend/partials/dl-prototype-banner.html' %}
+  {% block dl_breadcrumbs %}
+  {{ govukBreadcrumbs({
+    "items": breadcrumbs
+  }) }}
+  {% endblock %}
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-xl">{{ list.title }}</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {{ list.content|safe }}
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <ul class="govuk-list">
+      {% for i in list.pages %}
+      <li>
+        <article>
+          <header>
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link" href="{{ i.url }}">{{ i.title }}</a>
+            </h2>
+          </header>
+          {% if i.summary %}
+          <div class="entry-summary">
+            {{ i.summary|markdown }}
+          </div>
+          {% endif %}
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+

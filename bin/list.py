@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+import os
+
+from pathlib import Path
+
+from digital_land_frontend.markdown.content_file import read_content_file
+
+from bin.summary import create_summary
+
+
+def create_list(pages, directory, **kwargs):
+    data = {"pages": []}
+    pages.remove("_list.md")
+    for page in pages:
+        p = os.path.join(directory, page)
+        fn = Path(p)
+        info = read_content_file(fn, expanded=True)
+        summary = create_summary(info, fn, **kwargs)
+        data["pages"].append(summary)
+
+    p = os.path.join(directory, "_list.md")
+    f = Path(p)
+    list_page = read_content_file(f, expanded=True)
+    data["title"] = list_page["title"]
+    data["content"] = list_page["content"]
+    return data
