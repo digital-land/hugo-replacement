@@ -14,6 +14,9 @@ def create_list(pages, directory, **kwargs):
     f = Path(p)
     data = read_content_file(f, expanded=True)
 
+    data["show_summaries"] = (
+        True if data["frontmatter"].get("show_summaries") is not None else False
+    )
     data["pages"] = []
 
     pages.remove("_list.md")
