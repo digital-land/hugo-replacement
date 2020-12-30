@@ -10,7 +10,12 @@ from bin.summary import create_summary
 
 
 def create_list(pages, directory, **kwargs):
-    data = {"pages": []}
+    p = os.path.join(directory, "_list.md")
+    f = Path(p)
+    data = read_content_file(f, expanded=True)
+
+    data["pages"] = []
+
     pages.remove("_list.md")
     for page in pages:
         p = os.path.join(directory, page)
@@ -19,9 +24,4 @@ def create_list(pages, directory, **kwargs):
         summary = create_summary(info, fn, **kwargs)
         data["pages"].append(summary)
 
-    p = os.path.join(directory, "_list.md")
-    f = Path(p)
-    list_page = read_content_file(f, expanded=True)
-    data["title"] = list_page["title"]
-    data["content"] = list_page["content"]
     return data
