@@ -83,9 +83,9 @@ def render_pages(parent_dir=""):
                     breadcrumbs=create_breadcrumbs(output_path),
                 )
         else:
-            # TO DO: copy other pages to /docs
-            print(p)
-            # copyfile(src, dst)
+            # copy other pages to /docs
+            print("Moving: ", p, os.path.join(output_dir, parent_dir, page))
+            copyfile(p, os.path.join(output_dir, parent_dir, page))
             pass
 
 
