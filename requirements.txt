@@ -1,7 +1,7 @@
 appdirs==1.4.4
 black==20.8b1
 click==7.1.2
-dataclasses==0.7
+dataclasses
 -e git+https://github.com/digital-land/frontend.git#egg=digital_land_frontend
 frontmatter==3.0.7
 importlib-metadata==2.0.0
