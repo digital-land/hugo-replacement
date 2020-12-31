@@ -1,5 +1,12 @@
 {% extends "digital-land-frontend/dlf-base.html" %}
 
+{% block dlHead %}
+{%- if content.frontmatter.external_url is defined %}
+<!-- redirect to {{content.frontmatter.external_url}} -->
+<meta http-equiv="Refresh" content="0; url='{{content.frontmatter.external_url}}'" />
+{% endif -%}
+{% endblock dlHead %}
+
 {% block beforeContent %}
   {% include 'digital-land-frontend/partials/dl-prototype-banner.html' %}
   {% block dl_breadcrumbs %}

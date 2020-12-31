@@ -20,12 +20,13 @@
   <div class="govuk-grid-column-two-thirds">
     <ul class="govuk-list{%- if not list.show_summaries %} govuk-list--bullet{% endif %}">
       {% for i in list.pages %}
+      {% set itemUrl = i.frontmatter.external_url if i.frontmatter.external_url is defined else i.url %}
       <li>
         {%- if list.show_summaries -%}
         <article>
           <header>
             <h2 class="govuk-heading-m">
-                <a class="govuk-link" href="{{ i.url }}">{{ i.title }}</a>
+                <a class="govuk-link" href="{{ itemUrl }}">{{ i.title }}</a>
             </h2>
           </header>
           {% if i.summary %}
@@ -35,7 +36,7 @@
           {% endif %}
         </article>
         {% else %}
-        <a class="govuk-link" href="{{ i.url }}">{{ i.title }}</a>
+        <a class="govuk-link" href="{{ itemUrl }}">{{ i.title }}</a>
         {% endif -%}
       </li>
       {%- endfor %}

@@ -25,6 +25,7 @@ def create_list(pages, directory, **kwargs):
         fn = Path(p)
         info = read_content_file(fn, expanded=True)
         summary = create_summary(info, fn, **kwargs)
+        summary["frontmatter"] = info["frontmatter"]
         data["pages"].append(summary)
 
     return data
