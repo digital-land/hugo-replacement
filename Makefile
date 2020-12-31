@@ -10,6 +10,8 @@ render: assets
 clean::
 	rm -rf $(DOCS_DIR)
 
+copy:
+	cp -r static/ $(DOCS_DIR)
 
 local: assets
 	mkdir -p $(DOCS_DIR)
