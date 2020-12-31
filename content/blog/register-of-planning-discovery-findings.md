@@ -1,6 +1,7 @@
 ---
 title: "Register of planning application data: Discovery findings"
-date: "2019-03-07T12:00:00+00:00"
+date: 2019-03-07
+timestamp: 2019-03-07T12:00:00+00:00
 author: "Mike Thompson"
 status: alpha
 description: >

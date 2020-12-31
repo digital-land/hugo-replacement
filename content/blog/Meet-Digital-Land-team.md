@@ -1,6 +1,6 @@
 ---
 title: "Meet the Digital Land team"
-date: "2020-10-02"
+date: 2020-10-02
 author: "Matt Lucht"
 external_url: "https://mhclgdigital.blog.gov.uk/2020/10/02/meet-the-digital-land-team/"
 status: alpha

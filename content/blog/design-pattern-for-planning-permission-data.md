@@ -1,6 +1,7 @@
 ---
 title: "A design pattern for planning permission data"
-date: "2019-04-02T12:00:00+00:00"
+date: 2019-04-02
+timestamp: 2019-04-02T12:00:00+00:00
 author: "Zarino Zappia"
 status: alpha
 description: >

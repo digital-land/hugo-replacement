@@ -1,6 +1,7 @@
 ---
 title: "Kicking off the Planning Permissions project"
-date: "2019-01-21T12:00:00+00:00"
+date: 2019-01-21
+timestamp: 2019-01-21T12:00:00+00:00
 author: "Emily Robertson-Knowlton"
 status: alpha
 description: >

@@ -1,6 +1,6 @@
 ---
 title: "Start treating planning applications as data, rather than documents"
-date: "2020-05-28"
+date: 2020-05-28
 author: "Euan Mills"
 external_url: "https://mhclgdigital.blog.gov.uk/2020/05/28/start-treating-planning-applications-as-data-rather-than-documents/"
 status: alpha

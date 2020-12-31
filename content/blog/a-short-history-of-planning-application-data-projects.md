@@ -1,6 +1,7 @@
 ---
 title: "A short history of planning application data projects"
-date: "2019-02-12T12:00:00+00:00"
+date: 2019-02-12
+timestamp: 2019-02-12T12:00:00+00:00
 author: "Mike Thompson"
 status: alpha
 description: >

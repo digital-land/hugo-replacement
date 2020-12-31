@@ -1,6 +1,7 @@
 ---
 title: "Data and Information"
-date: "2018-10-25T13:24:27+00:00"
+date: 2018-10-25
+timestamp: 2018-10-25T13:24:27+00:00
 author: "Paul Downey"
 external_url: "https://mhclgdigital.blog.gov.uk/2018/10/25/data-and-information/"
 status: alpha

@@ -1,6 +1,7 @@
 ---
 title: "Planning permissions ‘Single register of planning’ discovery: Sprint notes 14-28 Jan 2019"
-date: "2019-01-30T12:00:00+00:00"
+date: 2019-01-30
+timestamp: 2019-01-30T12:00:00+00:00
 author: "Emily Robertson-Knowlton"
 status: alpha
 summary: >

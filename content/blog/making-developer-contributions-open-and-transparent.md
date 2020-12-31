@@ -1,6 +1,7 @@
 ---
 title: "Making developer contributions open and transparent"
-date: "2018-10-16T14:00:35+00:00"
+date: 2018-10-16
+timestamp: 2018-10-16T14:00:35+00:00
 author: "Matt Lucht"
 external_url: "https://mhclgdigital.blog.gov.uk/2018/10/16/making-developer-contributions-open-and-transparent/"
 status: alpha
