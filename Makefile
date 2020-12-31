@@ -1,7 +1,14 @@
+# current git branch
+BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
+
 DOCS_DIR=./docs/
 
-init:
+init: submodule
 	pip install -r requirements.txt
+	cd frontend && pip install -e .
+
+submodule:
+	git submodule update --init --recursive --remote
 
 render: assets
 	mkdir -p $(DOCS_DIR)
@@ -18,7 +25,7 @@ local: assets
 	python3 render.py --local
 
 STATIC_DIR := docs
-LOCAL_FRONTEND :=../frontend
+LOCAL_FRONTEND := frontend
 
 assets/css:
 	mkdir -p $(STATIC_DIR)/stylesheets
@@ -31,3 +38,7 @@ assets/js:
 	rsync -r $(LOCAL_FRONTEND)/digital_land_frontend/static/javascripts/ $(STATIC_DIR)/javascripts/
 
 assets:: assets/css assets/js
+
+commit-docs::
+	git add docs
+	git diff --quiet && git diff --staged --quiet || (git commit -m "Rebuilt docs $(shell date +%F)"; git push origin $(BRANCH))
