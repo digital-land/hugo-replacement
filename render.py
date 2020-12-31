@@ -69,7 +69,6 @@ def render_pages(parent_dir=""):
                     list=list,
                     breadcrumbs=create_breadcrumbs(output_path),
                 )
-                pass
             else:
                 # compile and render markdown file
                 fn = Path(p)
@@ -85,7 +84,6 @@ def render_pages(parent_dir=""):
             # copy other pages to /docs
             print("Moving: ", p, os.path.join(output_dir, parent_dir, page))
             copyfile(p, os.path.join(output_dir, parent_dir, page))
-            pass
 
 
 if __name__ == "__main__":
