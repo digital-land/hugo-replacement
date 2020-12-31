@@ -10,12 +10,13 @@ init: submodule
 submodule:
 	git submodule update --init --recursive --remote
 
-render: assets
+render: assets copy
 	mkdir -p $(DOCS_DIR)
 	python3 render.py
 
 clean::
 	rm -rf $(DOCS_DIR)
+	mkdir -p $(DOCS_DIR)
 
 copy:
 	cp -r static/ $(DOCS_DIR)
