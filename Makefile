@@ -5,7 +5,7 @@ DOCS_DIR=./docs/
 
 init: submodule
 	pip install -r requirements.txt
-	cd frontend && pip install -e .
+	cd frontend && pip install -e . && npm install
 
 submodule:
 	git submodule update --init --recursive --remote
