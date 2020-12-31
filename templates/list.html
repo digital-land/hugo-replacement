@@ -1,28 +1,19 @@
-{% extends "digital-land-frontend/dlf-base.html" %}
-
-{% block beforeContent %}
-  {% include 'digital-land-frontend/partials/dl-prototype-banner.html' %}
-  {% block dl_breadcrumbs %}
-  {{ govukBreadcrumbs({
-    "items": breadcrumbs
-  }) }}
-  {% endblock %}
-{% endblock %}
+{% extends "content-base.html" %}
 
 {% block content %}
-<h1 class="govuk-heading-xl">{{ list.title }}</h1>
+<h1 class="govuk-heading-xl">{{ pageContent.title }}</h1>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {%- if list.lede %}<p class="govuk-body-l">{{ list.lede }}</p>{% endif -%}
-    {{ list.content|safe }}
+    {%- if pageContent.lede %}<p class="govuk-body-l">{{ pageContent.lede }}</p>{% endif -%}
+    {{ pageContent.content|safe }}
   </div>
   <div class="govuk-grid-column-two-thirds">
-    <ul class="govuk-list{%- if not list.show_summaries %} govuk-list--bullet{% endif %}">
-      {% for i in list.pages %}
+    <ul class="govuk-list{%- if not pageContent.show_summaries %} govuk-list--bullet{% endif %}">
+      {% for i in pageContent.pages %}
       {% set itemUrl = i.frontmatter.external_url if i.frontmatter.external_url is defined else i.url %}
       <li>
-        {%- if list.show_summaries -%}
+        {%- if pageContent.show_summaries -%}
         <article>
           <header>
             <h2 class="govuk-heading-m">
