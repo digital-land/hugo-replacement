@@ -62,7 +62,6 @@ def render_pages(parent_dir=""):
         elif page.endswith(".md"):
             if page == "_list.md":
                 list = create_list(pages, path_to_directory)
-                list["pages"].sort(key=lambda x: x["title"])
                 output_path = os.path.join(output_dir, parent_dir, "index.html")
                 render(
                     output_path,

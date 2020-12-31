@@ -9,6 +9,22 @@ from digital_land_frontend.markdown.content_file import read_content_file
 from bin.summary import create_summary
 
 
+def sort_pages(data):
+    # sort by option field, default to title
+    data["pages"].sort(key=lambda x: x["title"])
+    if data["frontmatter"].get("sort_by") is not None:
+        sb = data["frontmatter"].get("sort_by")
+        field = sb.get("field")
+        reverse = sb.get("reverse") if sb.get("reverse") is not None else False
+        try:
+            data["pages"].sort(
+                key=lambda x: x["frontmatter"].get(field), reverse=reverse
+            )
+        except Exception as e:
+            print(e)
+    return data
+
+
 def create_list(pages, directory, **kwargs):
     p = os.path.join(directory, "_list.md")
     f = Path(p)
@@ -28,4 +44,4 @@ def create_list(pages, directory, **kwargs):
         summary["frontmatter"] = info["frontmatter"]
         data["pages"].append(summary)
 
-    return data
+    return sort_pages(data)

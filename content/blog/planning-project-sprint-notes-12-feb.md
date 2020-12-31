@@ -3,7 +3,7 @@ title: "Planning permissions ‘Single register of planning’ discovery: Sprint
 date: "2019-02-12T12:00:00+00:00"
 author: "Emily Robertson-Knowlton"
 status: alpha
-description: >
+summary: >
   What we’ve been up to this sprint, including: talking to stakeholders,
   learning about similar projects that have been done, and holding our
   second round of user research interviews.
